@@ -1,0 +1,127 @@
+/* Background gradient */
+body {
+  background: linear-gradient(180deg, #6DD5FA 0%, #2980B9 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #263238;
+  transition: background 0.6s ease-in-out;
+}
+
+/* Main container with glass effect */
+#weather-container {
+  background: rgba(255, 255, 255, 0.25);
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  text-align: center;
+}
+
+/* Heading */
+h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+/* Input */
+input {
+  width: calc(100% - 16px);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Button */
+button {
+  background: #ffd54f;
+  color: #263238;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 12px;
+  width: 120px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s;
+}
+button:hover {
+  background: #ffeb3b;
+  transform: scale(1.05);
+}
+
+/* Weather icon */
+#weather-icon {
+  width: 200px;
+  height: 160px;
+  margin: 10px auto;
+  display: none;
+}
+
+/* Temperature text */
+#temp-div p {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: -20px;
+  transition: opacity 0.6s ease-in;
+  margin-bottom: -20px;
+}
+
+/* Weather info */
+#weather-info {
+  color: #fafafa;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1;
+  transition: opacity 0.6s ease-in;
+}
+#weather-info.show {
+  opacity: 1;
+}
+
+/* Hourly forecast */
+#hourly-forecast {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.hourly-item {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80px;
+  flex: 0 0 auto;
+  text-align: center;
+  color: #ffffff;
+  transition: transform 0.3s;
+}
+.hourly-item:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hourly-item img {
+  width: 35px;
+  height: 35px;
+}
+
+#hourly-heading {
+  color: #ffffff;
+  margin-top: 15px;
+}
