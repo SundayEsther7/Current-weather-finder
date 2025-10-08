@@ -1,9 +1,9 @@
-# 🌦️ Weather App
+# 🌦️ Weather App 
 
 A simple weather web app built using **HTML**, **CSS**, and **JavaScript**.  
 It displays current weather and hourly forecasts using the **OpenWeatherMap API**.
 
----
+------------
 
 ##  Features ##
 - Search weather by city
@@ -19,13 +19,15 @@ It displays current weather and hourly forecasts using the **OpenWeatherMap API*
 - JavaScript (Fetch API)  
 - OpenWeatherMap API  
 
----
+----
 
 ##  Getting an API Key ##
-1. Go to [https://openweathermap.org/api](https://openweathermap.org/api)  
-2. Create a free account  
-3. Copy your **API key** from your profile  
-4. In `script.js`, replace this line:
+1. Go to [https://openweathermap.org]  
+2. Create a free account
+3. Navigate to the API keys section
+4. Generate a key
+5. Copy your **API key** 
+6. In `script.js`, replace this line:
    ```js
    const apiKey = "YOUR_API_KEY_HERE";
 with your own key.
@@ -38,3 +40,5 @@ Open the folder in VS Code
 Run index.html using the Live Server extension
 
 Enter a city name and click Search
+
+Enjoy!
