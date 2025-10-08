@@ -1,6 +1,6 @@
-// script.js - replace entire file with this
-const apiKey = "4883cb4429a02d4f7d96960d690a47fb";
+const apiKey = "YOUR_KEY_HERE";
 
+// Function to fetch and display weather data
 async function getWeather() {
   const city = document.getElementById("city").value.trim();
   if (!city) {
@@ -22,9 +22,10 @@ async function getWeather() {
       displayError(msg);
       return;
     }
+
+    // Hourly forecast
     displayWeather(dataWeather);
 
-    // Forecast (best-effort; don't wipe main info on failure)
     try {
       const resForecast = await fetch(forecastUrl);
       const dataForecast = await resForecast.json();
@@ -45,6 +46,7 @@ async function getWeather() {
   }
 }
 
+// Functions to update the UI elements with error messages 
 function displayError(message) {
   const weatherInfoDiv = document.getElementById("weather-info");
   const tempDivInfo = document.getElementById("temp-div");
@@ -56,6 +58,7 @@ function displayError(message) {
   if (weatherIcon) weatherIcon.style.display = "none";
 }
 
+// Functions to update the UI elements with data
 function displayWeather(data) {
   const tempDivInfo = document.getElementById("temp-div");
   const weatherInfoDiv = document.getElementById("weather-info");
@@ -73,6 +76,7 @@ function displayWeather(data) {
   tempDivInfo.innerHTML = `<p>${temperature}°C</p>`;
   weatherInfoDiv.innerHTML = `<p>${cityName}</p><p>${description}</p>`;
 
+  // Update weather icon
   if (iconUrl) {
     weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
@@ -82,6 +86,7 @@ function displayWeather(data) {
   }
 }
 
+// Function to display the hourly forecast
 function displayHourlyForecast(list) {
   const hourlyForecastDiv = document.getElementById("hourly-forecast");
   if (!hourlyForecastDiv) return;
@@ -103,6 +108,7 @@ function displayHourlyForecast(list) {
   });
 }
 
+// Function to show the weather icon
 function showImage() {
   const weatherIcon = document.getElementById("weather-icon");
   if (!weatherIcon) return;
@@ -111,6 +117,7 @@ function showImage() {
   setTimeout(() => weatherIcon.classList.add("show"), 50);
 }
 
+// Function to show the loading spinner
 function showLoading(show) {
   const loader = document.getElementById("loading");
   if (!loader) return;
